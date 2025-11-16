@@ -6,19 +6,20 @@ A **Resume Parsing API** built with FastAPI that extracts structured data from P
 
 ## Table of Contents
 
-1. [Overview](#overview)  
-2. [Features](#features)  
-3. [Tech Stack](#tech-stack)  
-4. [Installation](#installation)  
-5. [Environment Variables](#environment-variables)  
-6. [Usage](#usage)  
-7. [API Endpoints](#api-endpoints)  
-8. [Project Structure](#project-structure)  
-9. [Project Flow Diagram](#project-flow-diagram)  
-10. [Error Handling](#error-handling)  
-11. [Improvements & Future Work](#improvements--future-work)  
-12. [Contributing](#contributing)  
-13. [License](#license)  
+1. [Overview](#overview)
+2. [Features](#features)
+3. [Tech Stack](#tech-stack)
+4. [Installation](#installation)
+5. [Environment Variables](#environment-variables)
+6. [Usage](#usage)
+   - [Running FastAPI API](#running-fastapi-api)
+   - [Running Streamlit Frontend](#running-streamlit-frontend)
+7. [API Endpoints](#api-endpoints)
+8. [Project Structure](#project-structure)
+9. [Project Flow Diagram](#project-flow-diagram)
+10. [Error Handling](#error-handling)
+11. [Improvements & Future Work](#improvements--future-work)
+12. [License](#license) 
 ---
 
 ## Overview
@@ -89,7 +90,7 @@ LOG_LEVEL=INFO
 ```
 
 ## Usage
-### Start the API:
+### Running FastAPI API:
 ``` 
 uvicorn app.main:app --reload
 ``` 
@@ -97,7 +98,13 @@ uvicorn app.main:app --reload
 
 - Fetch resume: GET /api/resume/{document_id}
 
-### Use a tool like Postman or cURL to test the endpoints.
+### Running Streamlit Frontend
+```
+streamlit run ui/streamlit_app.py
+```
+
+
+## API Endpoints
 
 API Endpoints
 | Endpoint                    | Method | Request            | Response         | Description                           |
@@ -111,6 +118,11 @@ Request example for upload (cURL):
 curl -X POST "http://localhost:8000/api/upload" 
 \-F "file=@/path/to/resume.pdf"
 ```
+API DOCS
+```
+http://localhost:8000/docs
+```
+
 ## Project Structure
 ```
 resume-parser/
